@@ -10,18 +10,29 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
+
           <motion.a 
             href="#"
             whileHover={{ scale: 1.1 }}
-            className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500"
+            animate={{
+              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"], 
+            }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            className="flex items-center text-2xl font-bold text-transparent bg-clip-text 
+                       bg-gradient-to-r from-green-400 via-blue-500 via-70% to-violet-500 bg-[length:200%_200%]"
           >
-            Portfolio
+            <img 
+              src="/avatar.jpeg" 
+              alt="Avatar" 
+              className="w-8 h-8 rounded-full mr-2"
+            />
+            NICOLAS Ethan
           </motion.a>
-          
-          <div className="flex space-x-8">
-            <NavLink href="#home" icon={<Home size={20} />} text="Accueil" />
-            <NavLink href="#projects" icon={<Code size={20} />} text="Projets" />
-            <NavLink href="#about" icon={<User size={20} />} text="À propos" />
+
+          <div className="flex space-x-6 md:space-x-8">
+            <NavLink href="#home" icon={<Home size={24} />} text="Accueil" />
+            <NavLink href="#projects" icon={<Code size={24} />} text="Projets" />
+            <NavLink href="#about" icon={<User size={24} />} text="À propos" />
           </div>
         </div>
       </div>
@@ -37,7 +48,7 @@ function NavLink({ href, icon, text }: { href: string; icon: React.ReactNode; te
       whileHover={{ scale: 1.1 }}
     >
       {icon}
-      <span>{text}</span>
+      <span className="hidden sm:inline">{text}</span>
     </motion.a>
   );
 }

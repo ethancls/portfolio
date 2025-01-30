@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
-import Scene3D from './Scene3D';
+import Cubic3D from './Cubic3D';
 
 export default function Hero() {
   return (
-    <div className="relative h-screen bg-black overflow-hidden">
+    <div id="home" className="relative h-screen bg-black overflow-hidden">
       <div className="absolute inset-0">
-        <Scene3D />
+        <Cubic3D />
       </div>
       
       <div className="relative z-10 h-full flex items-center">
@@ -18,29 +18,30 @@ export default function Hero() {
             className="max-w-3xl"
           >
             <h1 className="text-4xl sm:text-6xl font-bold mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-blue-500 to-violet-500">
                 Creative Developer
               </span>
             </h1>
             <p className="text-gray-300 text-lg sm:text-xl mb-8">
-              Crafting digital experiences through code and creativity
+              Next generation engineer and aim to be searcher
             </p>
             
             <div className="flex space-x-4">
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                href="#contact"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg font-medium"
+                href="/co"
+                className="bg-gradient-to-r from-green-400 via-blue-500 to-violet-500 px-6 py-3 rounded-lg font-medium"
               >
-                Get in touch
-              </motion.a>
+                Contact Me
+              
+                </motion.a>
               
               <div className="flex space-x-4 items-center">
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  href="https://github.com"
+                  href="https://github.com/ethancls"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white"
@@ -50,7 +51,7 @@ export default function Hero() {
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/ethannicolas/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white"
@@ -60,7 +61,7 @@ export default function Hero() {
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  href="mailto:your.email@example.com"
+                  href="mailto:ethancls@icloud.com"
                   className="text-gray-300 hover:text-white"
                 >
                   <Mail size={24} />

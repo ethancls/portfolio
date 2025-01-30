@@ -1,30 +1,73 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 
+import atlasImage from '../images/atlas.png';
+import gameOfLifeImage from '../images/gun.png';
+import puissance4Image from '../images/puissance4.jpeg';
+import hsReactImage from '../images/hsreact.png';
+import undergroundImage from '../images/underground.png';
+import adnImage from '../images/adn.webp';
+import zoomImage from '../images/chat.png';
+import inversionImage from '../images/schur.png';
+
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "Une plateforme e-commerce moderne construite avec React et Node.js",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com",
-    demo: "https://demo.com"
+    title: "Atlas",
+    description: "Une plateforme pour découvrir les films et séries TV utilisant l'API TMDB.",
+    image: atlasImage,
+    tags: ["React", "Node.js", "NextJS", "TailwindCSS"],
+    github: "https://github.com/ethancls/Atlas",
+    demo: "https://atlas-galilee.vercel.app",
+    infos: "Connexion avec admin/admin",
   },
   {
-    title: "Application Mobile",
-    description: "Application mobile de fitness avec suivi en temps réel",
-    image: "https://images.unsplash.com/photo-1526502900236-e35bf93fe8b8?auto=format&fit=crop&q=80",
-    tags: ["React Native", "Firebase", "Redux"],
-    github: "https://github.com",
-    demo: "https://demo.com"
+    title: "Jeu de la vie",
+    description: "Modélisation Java du jeu de la vie de Conway avec visualisation en 2D et 3D.",
+    image: gameOfLifeImage,
+    tags: ["Java", "JavaFX", "XML"], 
+    github: "https://github.com/ethancls/gameoflife",
   },
   {
-    title: "Dashboard Analytics",
-    description: "Dashboard d'analyse de données avec visualisations en temps réel",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80",
-    tags: ["Vue.js", "D3.js", "GraphQL"],
-    github: "https://github.com",
-    demo: "https://demo.com"
+    title: "Puissance 4 avec IA",
+    description: "Création d'un jeu de puissance 4 avec une IA (Alpha-Beta Pruning) en C.",
+    image: puissance4Image,
+    tags: ["C", "Algorithmie (Alpha-Beta)", "Gesion de mémoire"],
+    github: "https://github.com/ethancls/puissance4",
+  },
+  {
+    title: "hsReact",
+    description: "Modélisation d'évolutions de systèmes chimiques en Haskell.",
+    image: hsReactImage,
+    tags: ["Haskell", "Programmation fonctionnelle", "Modélisation"],
+    github: "https://github.com/ethancls/hsReact",
+  },
+  {
+    title: "Underground",
+    description: "Un simulateur de trains en JavaScript qui permet de créer des circuits et de les tester.",
+    image: undergroundImage,
+    tags: ["JavaScript"],
+    github: "https://github.com/ethancls/underground",
+  },
+  {
+    title: "ADN",
+    description: "Résolution d'agencement d'ADN (classe NP-difficile) à l'aide d'une métaheuristique (algorithme génétique).",
+    image: adnImage,
+    tags: ["C", "Métaheuristique", "I/O"],
+    github: "https://github.com/ethancls/adn",
+  },
+  {
+    title: "Zoom via splines cubiques",
+    description: "Outil permettant de réaliser une interpolation d’un ensemble de points (méthode des splines cubiques) et appliquerez cela à un algorithme d’agrandissement d’images.",
+    image: zoomImage,
+    tags: ["C", "Interpolation", "Image I/O"],
+    github: "https://github.com/ethancls/zoom_splines_cubiques",
+  },
+  {
+    title: "Inversion de matrice",
+    description: "Outil pour l'inversion de matrices utilisant la décomposition de Schur.",
+    image: inversionImage,
+    tags: ["C", "Calcul matriciel", "Optimisation"],
+    github: "https://github.com/ethancls/inversion_matrices",
   }
 ];
 
@@ -35,8 +78,8 @@ export default function Projects() {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500"
+          transition={{ duration: 0.8 }}
+          className="text-3xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-500 to-yellow-500"
         >
           Mes Projets
         </motion.h2>
@@ -51,7 +94,17 @@ export default function Projects() {
   );
 }
 
-function ProjectCard({ project, index }: { project: any; index: number }) {
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  github: string;
+  demo?: string;
+  infos?: string;
+}
+
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -61,7 +114,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
     >
       <div className="relative h-48">
         <img 
-          src={project.image} 
+          src={project.image}  
           alt={project.title}
           className="w-full h-full object-cover"
         />
@@ -83,7 +136,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
           ))}
         </div>
         
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 items-center">
           <motion.a
             whileHover={{ scale: 1.1 }}
             href={project.github}
@@ -94,16 +147,21 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
             <Github size={20} />
             <span>Code</span>
           </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.1 }}
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
-          >
-            <ExternalLink size={20} />
-            <span>Demo</span>
-          </motion.a>
+          {project.demo && (
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
+            >
+              <ExternalLink size={20} />
+              <span>Demo</span>
+            </motion.a>
+          )}
+          {project.infos && (
+            <span className="text-xs text-gray-500 ml-2">{project.infos}</span>
+          )}
         </div>
       </div>
     </motion.div>
