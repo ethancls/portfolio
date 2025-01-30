@@ -18,12 +18,12 @@ export default function Hero() {
             className="max-w-3xl"
           >
             <div className="bg-black bg-opacity-50 backdrop-blur-md p-6 rounded-lg">
-              <h1 className="text-4xl sm:text-6xl font-bold mb-4">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-violet-500">
                   import Ethan from 'ethancls';
                 </span>
               </h1>
-              <p className="text-gray-300 text-lg sm:text-xl mb-8">
+              <p className="text-gray-300 text-xl md:text-2xl mb-8">
                 Passioné par l'informatique, je souhaite m'orienter dans le domaine de la recherche sur des applications des modèles d'apprentissage dans l'imagerie et dans la modélisation de phénomènes physiques dans les rendus 3D.
               </p>
               
