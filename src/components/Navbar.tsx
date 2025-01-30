@@ -24,9 +24,9 @@ export default function Navbar() {
             <img 
               src="/avatar.jpeg" 
               alt="Avatar" 
-              className="w-8 h-8 rounded-full mr-2"
+              className="w-12 h-12 rounded-full mr-2"
             />
-            NICOLAS Ethan
+            My Portfolio
           </motion.a>
 
           <div className="flex space-x-6 md:space-x-8">
