@@ -26,7 +26,7 @@ export default function Navbar() {
               alt="Avatar" 
               className="w-12 h-12 rounded-full mr-2"
             />
-            My Portfolio
+            Portfolio d'Ethan Nicolas
           </motion.a>
 
           <div className="flex space-x-6 md:space-x-8">
