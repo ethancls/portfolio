@@ -20,7 +20,7 @@ export default function About() {
                     {/* About Title with Animated Gradient */}
                     <h2 className="text-4xl sm:text-5xl font-bold mb-6">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-violet-500">
-                            About Me
+                            À Propos
                         </span>
                     </h2>
 

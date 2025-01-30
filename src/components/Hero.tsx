@@ -20,7 +20,7 @@ export default function Hero() {
             <div className="bg-black bg-opacity-50 backdrop-blur-md p-6 rounded-lg">
               <h1 className="text-4xl sm:text-6xl font-bold mb-4">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-violet-500">
-                  Ethan NICOLAS
+                  import Ethan from 'ethancls';
                 </span>
               </h1>
               <p className="text-gray-300 text-lg sm:text-xl mb-8">
@@ -31,7 +31,7 @@ export default function Hero() {
                 <motion.a
                   className="bg-gradient-to-r from-green-400 via-blue-500 to-violet-500 px-6 py-3 rounded-lg font-medium"
                 >
-                  Contact Me
+                  Liens
                 </motion.a>
                 
                 <div className="flex space-x-4 items-center">
